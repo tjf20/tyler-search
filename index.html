@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tyler Search | Trade Compliance Recruiters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --maroon: #5C1414;
+  --maroon-dark: #3A0A0A;
+  --gold: #E8B800;
+  --gold-light: #F5CE40;
+  --white: #FFFFFF;
+  --off-white: #F8F6F2;
+  --light-gray: #EFEFED;
+  --text: #111111;
+  --text-mid: #555555;
+  --display: 'Bebas Neue', sans-serif;
+  --body: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); color: var(--text); background: var(--white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 3px solid var(--maroon);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%; height: 68px;
+}
+.nav-logo img { height: 42px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text); transition: color 0.15s; }
+.nav-links a:hover { color: var(--maroon); }
+.nav-email { background: var(--maroon) !important; color: var(--white) !important; padding: 10px 24px; }
+.nav-email:hover { background: var(--maroon-dark) !important; }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 68px; }
+
+.hero-left {
+  background: var(--maroon);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 8% 80px 6%;
+}
+.hero-kicker {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.2vw, 30px);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(232,184,0,0.25);
+}
+.hero-left h1 { font-family: var(--display); font-size: clamp(58px, 6vw, 92px); line-height: 0.92; letter-spacing: 1px; color: var(--white); margin-bottom: 32px; }
+.hero-left h1 span { color: var(--gold); display: block; }
+.hero-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.68); line-height: 1.75; max-width: 380px; margin-bottom: 48px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn-gold { background: var(--gold); color: var(--text); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 32px; border: 2px solid var(--gold); cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+.btn-outline-white { background: transparent; color: var(--white); font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 32px; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; }
+.btn-outline-white:hover { border-color: var(--gold); color: var(--gold); }
+
+/* HERO RIGHT — Differentiators */
+.hero-right { background: var(--off-white); display: flex; flex-direction: column; justify-content: center; padding: 80px 6% 80px 8%; }
+.hero-right-label { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--maroon); margin-bottom: 28px; }
+
+.diff-item { display: flex; gap: 20px; align-items: flex-start; padding: 22px 0; border-bottom: 1px solid #DDD; }
+.diff-item:last-child { border-bottom: none; }
+.diff-stat { font-family: var(--display); font-size: 34px; color: var(--maroon); line-height: 1; width: 200px; flex-shrink: 0; padding-top: 3px; }
+.diff-stat.text-stat { font-size: 22px; padding-top: 6px; }
+.diff-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 5px; }
+.diff-desc { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
+
+/* GOLD BAR */
+.gold-bar { background: var(--gold); padding: 28px 6%; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.gold-bar-stats { display: flex; gap: 48px; flex-wrap: wrap; }
+.gstat-num { font-family: var(--display); font-size: 42px; color: var(--maroon); line-height: 1; }
+.gstat-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(92,20,20,0.6); margin-top: 2px; }
+.gold-bar-tagline { font-family: var(--display); font-size: 22px; letter-spacing: 1px; color: var(--maroon-dark); line-height: 1.25; }
+
+/* SPLIT SECTIONS */
+.split { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
+.split-img { background-size: cover; background-position: center; min-height: 400px; }
+.split-content { display: flex; flex-direction: column; justify-content: center; padding: 80px 7%; }
+.split-content.bg-maroon { background: var(--maroon); }
+.split-content.bg-off-white { background: var(--off-white); }
+.split-content.bg-white { background: var(--white); }
+
+.eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.eyebrow.dark { color: var(--maroon); }
+
+h2.display { font-family: var(--display); font-size: clamp(42px, 4.5vw, 64px); line-height: 0.95; letter-spacing: 0.5px; margin-bottom: 24px; }
+h2.display.light { color: var(--white); }
+h2.display.dark { color: var(--text); }
+h2.display.maroon { color: var(--maroon); }
+
+.body-text { font-size: 15px; font-weight: 300; line-height: 1.8; margin-bottom: 36px; }
+.body-text.light { color: rgba(255,255,255,0.7); }
+.body-text.dark { color: var(--text-mid); }
+
+/* PROMISE ITEMS (Job Seekers) */
+.promise-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
+.promise-item { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+.promise-check { color: var(--maroon); font-weight: 700; font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+/* REASONS */
+.reasons-section { background: var(--white); padding: 100px 6%; }
+.reasons-inner { max-width: 1100px; margin: 0 auto; }
+.reasons-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; gap: 40px; flex-wrap: wrap; }
+.reasons-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--light-gray); }
+.reason-card { background: var(--white); padding: 48px 36px; transition: background 0.15s; }
+.reason-card:hover { background: var(--off-white); }
+.reason-num { font-family: var(--display); font-size: 64px; line-height: 1; color: var(--light-gray); margin-bottom: 16px; }
+.reason-card h3 { font-family: var(--display); font-size: 28px; letter-spacing: 0.5px; color: var(--maroon); margin-bottom: 12px; }
+.reason-card p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
+
+/* SPECIALTIES */
+.spec-section { background: var(--off-white); padding: 100px 6%; }
+.spec-inner { max-width: 1100px; margin: 0 auto; }
+.spec-header { margin-bottom: 60px; }
+.spec-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: #D8D5D0; }
+.spec-card { background: var(--white); padding: 40px 32px; border-top: 3px solid transparent; transition: border-color 0.15s, background 0.15s; }
+.spec-card:hover { border-top-color: var(--maroon); background: var(--off-white); }
+.spec-card h3 { font-family: var(--display); font-size: 24px; letter-spacing: 0.5px; color: var(--text); margin-bottom: 10px; }
+.spec-card p { font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.7; }
+
+/* HOW WE WORK */
+.how-section { background: var(--white); padding: 100px 6%; }
+.how-inner { max-width: 1100px; margin: 0 auto; }
+.how-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; gap: 40px; flex-wrap: wrap; }
+.how-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--light-gray); }
+.how-card { background: var(--white); padding: 48px 36px; transition: background 0.15s; }
+.how-card:hover { background: var(--off-white); }
+.how-num { font-family: var(--display); font-size: 64px; line-height: 1; color: var(--light-gray); margin-bottom: 16px; }
+.how-card h3 { font-family: var(--display); font-size: 28px; letter-spacing: 0.5px; color: var(--maroon); margin-bottom: 12px; }
+.how-card p { font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
+
+/* COMPENSATION SECTION */
+.salary-row { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0; border-bottom: 1px solid #DDD; gap: 16px; }
+.salary-row:last-of-type { border-bottom: none; }
+.salary-title { font-size: 14px; font-weight: 400; color: var(--text); flex: 1; }
+.salary-range { font-family: var(--display); font-size: 24px; letter-spacing: 0.5px; color: var(--maroon); white-space: nowrap; }
+.salary-label { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--maroon); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+.salary-label-badge { background: var(--gold); color: var(--text); font-size: 9px; padding: 3px 10px; font-weight: 700; letter-spacing: 1.5px; }
+.salary-cta { margin-top: 28px; padding-top: 24px; border-top: 3px solid var(--maroon); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.salary-cta p { font-size: 13px; color: var(--text-mid); }
+
+.btn-maroon { background: var(--maroon); color: var(--white); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 24px; border: 2px solid var(--maroon); cursor: pointer; transition: all 0.15s; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; }
+.btn-maroon:hover { background: var(--maroon-dark); border-color: var(--maroon-dark); }
+
+/* MARKET FACTORS */
+.factors-section { background: var(--maroon); padding: 100px 6%; }
+.factors-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+.factors-left h2 { font-family: var(--display); font-size: clamp(44px,4.5vw,68px); color: var(--white); line-height: 0.95; margin-bottom: 20px; }
+.factors-left h2 span { color: var(--gold); display: block; }
+.factors-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.75; }
+.factors-right { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.08); }
+.factor-item { background: rgba(255,255,255,0.04); padding: 32px 28px; }
+.factor-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.factor-value { font-family: var(--display); font-size: 36px; color: var(--white); line-height: 1; margin-bottom: 8px; }
+.factor-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.52); line-height: 1.65; }
+
+/* CTA */
+.cta-section { background: var(--gold); padding: 100px 6%; text-align: center; }
+.cta-section h2 { font-family: var(--display); font-size: clamp(52px,6vw,88px); color: var(--maroon); line-height: 0.92; margin-bottom: 20px; }
+.cta-section p { font-size: 16px; font-weight: 300; color: rgba(92,20,20,0.72); margin-bottom: 44px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-outline-maroon { background: transparent; color: var(--maroon); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 36px; border: 2px solid var(--maroon); cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; }
+.btn-outline-maroon:hover { background: var(--maroon); color: var(--white); }
+
+/* FOOTER */
+footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
+.footer-logo img { height: 44px; width: auto; margin-bottom: 20px; filter: brightness(0) invert(1); opacity: 0.8; }
+.footer-logo p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.38); line-height: 1.8; }
+.footer-col h4 { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.42); transition: color 0.15s; }
+.footer-col ul a:hover { color: var(--gold); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-bottom p { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.18); }
+.footer-tagline { font-family: var(--display); font-size: 16px; letter-spacing: 1px; color: rgba(232,184,0,0.45); }
+
+.arr { display: inline-block; width: 14px; height: 14px; vertical-align: middle; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { min-height: 80vh; padding: 80px 6%; }
+  .hero-right { padding: 60px 6%; }
+  .split { grid-template-columns: 1fr; }
+  .split-img { min-height: 280px; }
+  .reasons-grid { grid-template-columns: 1fr; }
+  .spec-grid { grid-template-columns: 1fr 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+  .factors-inner { grid-template-columns: 1fr; gap: 48px; }
+  .factors-right { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .spec-grid { grid-template-columns: 1fr; }
+  .factors-right { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; }
+  .gold-bar-stats { gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<!-- Left-to-right order matches top-to-bottom page order: About → Specialties → Compensation → Careers -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <img src="images/TylerSearchLogo012.jpg" alt="Tyler Search">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#compensation">Compensation</a></li>
+    <li><a href="#careers">Careers</a></li>
+    <li><a href="mailto:careers@tylersearch.com" class="nav-email">Email Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-kicker">America's #1 Trade Compliance Recruiters</div>
+    <h1>THE RIGHT<span>HIRE.</span>EVERY TIME.</h1>
+    <p class="hero-sub">The first firm in America dedicated solely to Trade Compliance — since the Customs Modernization Act in the 1990s. Thirty-five years and 2,500+ placements later, it's still all we do.</p>
+    <div class="hero-btns">
+      <a href="mailto:careers@tylersearch.com" class="btn-gold">
+        Find Talent
+        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+      <a href="#careers" class="btn-outline-white">Job Seekers</a>
+    </div>
+  </div>
+
+  <!-- Right panel: The Tyler Search Difference -->
+  <div class="hero-right">
+    <div class="hero-right-label">The Tyler Search Difference</div>
+
+    <div class="diff-item">
+      <div class="diff-stat">20,000+</div>
+      <div>
+        <div class="diff-title">Proprietary TC Database</div>
+        <div class="diff-desc">The deepest network of Trade Compliance professionals in America — accessed immediately upon receiving your search request.</div>
+      </div>
+    </div>
+
+    <div class="diff-item">
+      <div class="diff-stat text-stat">Contingency.<br>Retained Approach.</div>
+      <div>
+        <div class="diff-title">No Upfront Costs</div>
+        <div class="diff-desc">We work on contingency but operate with the discipline and discretion of a retained firm. You pay only when we deliver.</div>
+      </div>
+    </div>
+
+    <div class="diff-item">
+      <div class="diff-stat text-stat">Strict Confidentiality</div>
+      <div>
+        <div class="diff-title">We Never Advertise Your Search</div>
+        <div class="diff-desc">Positions are filled through our proprietary network. Your search stays private — from first call through accepted offer.</div>
+      </div>
+    </div>
+
+    <div class="diff-item">
+      <div class="diff-stat text-stat">Fortune 500 to Mid-Market</div>
+      <div>
+        <div class="diff-title">Every Firm Size, Every Level</div>
+        <div class="diff-desc">From Analyst to VP, startup to global enterprise — we've placed Trade Compliance professionals across every industry and company size.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOLD BAR -->
+<div class="gold-bar">
+  <div class="gold-bar-stats">
+    <div><div class="gstat-num">35+</div><div class="gstat-label">Years in Business</div></div>
+    <div><div class="gstat-num">2,500+</div><div class="gstat-label">Successful Placements</div></div>
+    <div><div class="gstat-num">20,000+</div><div class="gstat-label">TC Professionals in Our Network</div></div>
+    <div><div class="gstat-num">100%</div><div class="gstat-label">TC Employment Rate</div></div>
+  </div>
+  <div class="gold-bar-tagline">Tyler was the First.<br>We're still the Best.</div>
+</div>
+
+<!-- ABOUT / FOR EMPLOYERS -->
+<section class="split" id="about">
+  <div class="split-content bg-maroon">
+    <div class="eyebrow">For Employers</div>
+    <h2 class="display light">FIND THE<br>RIGHT TALENT.</h2>
+    <p class="body-text light">We work on contingency but operate like a retained firm — no upfront cost, no advertising your search, and strict confidentiality throughout. Most of our client firms have partnered with us for years across multiple searches. There's a reason for that.</p>
+    <a href="mailto:careers@tylersearch.com" class="btn-gold" style="align-self:flex-start;">
+      Start a Search
+      <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+  <div class="split-img" style="background-image:url('images/FindTalent.png'); background-color:#8C2020;"></div>
+</section>
+
+<!-- WHY TC PROS MOVE -->
+<section class="reasons-section">
+  <div class="reasons-inner">
+    <div class="reasons-header">
+      <div>
+        <div class="eyebrow dark">2026 Insight</div>
+        <h2 class="display dark" style="margin-bottom:0;">WHY TC PROS<br>MAKE A MOVE.</h2>
+      </div>
+      <p style="font-size:15px;font-weight:300;color:var(--text-mid);max-width:300px;line-height:1.75;">The landscape has shifted. Here's what's driving career decisions right now.</p>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <div class="reason-num">01</div>
+        <h3>Compensation</h3>
+        <p>Salaries are rising across all levels. If you haven't benchmarked recently, you may be leaving money on the table.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">02</div>
+        <h3>Remote &amp; Hybrid</h3>
+        <p>100% of candidates accept interviews for remote roles. Hybrid (3/2) drives strong interest. Full on-site sees significantly lower candidate engagement.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">03</div>
+        <h3>Top-Down Culture</h3>
+        <p>Professionals want leadership that genuinely invests in compliance — not treats it as a cost center.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="spec-section" id="specialties">
+  <div class="spec-inner">
+    <div class="spec-header">
+      <div class="eyebrow dark">What We Place</div>
+      <h2 class="display dark">OUR SPECIALTIES.</h2>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h3>Export Compliance</h3>
+        <p>EAR, ITAR, dual-use, encryption. Defense, Aerospace, Semiconductor, Tech. Huge demand — very small talent pool.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Import Compliance</h3>
+        <p>Customs classification, HTS, CBP regulations, drawback. Entry-level through Senior Director.</p>
+      </div>
+      <div class="spec-card">
+        <h3>TC Management</h3>
+        <p>Managers and Senior Managers overseeing integrated or specialty compliance teams at all company sizes.</p>
+      </div>
+      <div class="spec-card">
+        <h3>In-House Trade Counsel</h3>
+        <p>J.D. and LLM professionals with regulatory specialization. We know exactly what legal teams need.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Directors &amp; VPs</h3>
+        <p>Enterprise leaders. Global reach. Multi-team oversight. $200K–$300K+ placements across every industry.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Sanctions &amp; OFAC</h3>
+        <p>Increasingly critical across banking, tech, energy, and manufacturing. High demand right now.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Foreign Trade Zone</h3>
+        <p>FTZ Administrators and Coordinators. A specialized role we've placed across manufacturing and distribution.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Licensed Customs Broker</h3>
+        <p>LCB professionals for broker firms, importers, and 3PLs. Entry through senior-level placements nationwide.</p>
+      </div>
+      <div class="spec-card">
+        <h3>Auditor &amp; Empowered Official</h3>
+        <p>TC Auditors, ITAR Empowered Officials, and Licensing specialists — niche roles we understand deeply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="how-header">
+      <div>
+        <div class="eyebrow dark">Our Process</div>
+        <h2 class="display dark" style="margin-bottom:0;">HOW WE WORK.</h2>
+      </div>
+      <p style="font-size:15px;font-weight:300;color:var(--text-mid);max-width:320px;line-height:1.75;">We don't post your role. We don't partner with other recruiters. We go directly to our network — and we move fast.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <h3>Brief Us</h3>
+        <p>Share your search criteria. We immediately access our proprietary database of 20,000+ verified Trade Compliance professionals — targeted to your role, level, and location.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <h3>Review Candidates</h3>
+        <p>We identify the right fit and submit résumés for your confidential review. No advertising. No blind submissions. Every candidate is pre-vetted and pre-qualified.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <h3>Make the Hire</h3>
+        <p>Your team selects candidates for a call or Teams meeting. We manage the process from first contact through accepted offer — and we stay engaged throughout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPENSATION -->
+<section class="split" id="compensation">
+  <div class="split-content bg-maroon">
+    <div class="eyebrow">2026 Compensation Data</div>
+    <h2 class="display light">WHAT THE<br>MARKET PAYS.</h2>
+    <p class="body-text light">Salaries are rising at every level of Trade Compliance. Whether you're a hiring manager benchmarking your offer or a professional evaluating your own market value — this is where the market stands right now.</p>
+    <a href="Trade_Compliance_Compensation_Trends_2026_-2-_Tyler_Search.pdf" class="btn-gold" style="align-self:flex-start;" target="_blank">
+      Download Full Report
+      <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+  <div class="split-content bg-off-white">
+    <div class="salary-label">2026 Salary Ranges <span class="salary-label-badge">2026 DATA</span></div>
+    <div class="salary-row">
+      <div class="salary-title">TC Analyst / Coordinator</div>
+      <div class="salary-range">$75K–$90K</div>
+    </div>
+    <div class="salary-row">
+      <div class="salary-title">TC Specialist</div>
+      <div class="salary-range">$90K–$98K</div>
+    </div>
+    <div class="salary-row">
+      <div class="salary-title">Senior TC Specialist / Analyst</div>
+      <div class="salary-range">$95K–$115K</div>
+    </div>
+    <div class="salary-row">
+      <div class="salary-title">Sr. Export Compliance Specialist</div>
+      <div class="salary-range">$120K–$145K</div>
+    </div>
+    <div class="salary-row">
+      <div class="salary-title">TC Manager / Senior Manager</div>
+      <div class="salary-range">$140K–$170K</div>
+    </div>
+    <div class="salary-row">
+      <div class="salary-title">Director / VP / In-House Counsel</div>
+      <div class="salary-range">$200K–$300K+</div>
+    </div>
+    <div class="salary-cta">
+      <p>Full 2026 Compensation Report</p>
+      <a href="assets/Compensation-Trends-2026.pdf" class="btn-maroon" target="_blank">
+        Download PDF
+        <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JOB SEEKERS / CAREERS -->
+<section class="split" id="careers">
+  <div class="split-img" style="background-image:url('images/NextOpportunity.png'); background-color:#CCC; order:-1;"></div>
+  <div class="split-content bg-off-white">
+    <div class="eyebrow dark">For Job Seekers</div>
+    <h2 class="display maroon">YOUR NEXT<br>OPPORTUNITY.</h2>
+    <p class="body-text dark">Confidential search. We represent <em>you</em> — not just a job description. Active roles across remote, hybrid, and on-site positions in every industry nationwide.</p>
+    <div class="promise-list">
+      <div class="promise-item">
+        <span class="promise-check">&#10003;</span>
+        <span>We never submit your résumé anywhere without discussing the specific role with you first.</span>
+      </div>
+      <div class="promise-item">
+        <span class="promise-check">&#10003;</span>
+        <span>We'll alert you confidentially as opportunities matching your criteria develop across the country.</span>
+      </div>
+      <div class="promise-item">
+        <span class="promise-check">&#10003;</span>
+        <span>We never partner with other recruiters — your information stays with us.</span>
+      </div>
+    </div>
+    <a href="mailto:careers@tylersearch.com" class="btn-maroon" style="align-self:flex-start;">
+      Contact Us
+      <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- MARKET FACTORS -->
+<section class="factors-section">
+  <div class="factors-inner">
+    <div class="factors-left">
+      <h2>THE MARKET<span>RIGHT NOW.</span></h2>
+      <p>Washington has shifted to an aggressive posture on trade policy. Demand for skilled TC professionals has never been higher — and the talent pool hasn't grown to match it.</p>
+    </div>
+    <div class="factors-right">
+      <div class="factor-item">
+        <div class="factor-label">Supply</div>
+        <div class="factor-value">LOW</div>
+        <div class="factor-desc">Finite number of experienced TC professionals. 100% employment in the niche.</div>
+      </div>
+      <div class="factor-item">
+        <div class="factor-label">Demand</div>
+        <div class="factor-value">HIGH</div>
+        <div class="factor-desc">Especially now as Washington reworks trade policy aggressively.</div>
+      </div>
+      <div class="factor-item">
+        <div class="factor-label">Remote Interest</div>
+        <div class="factor-value">100%</div>
+        <div class="factor-desc">Every candidate will interview for a remote opportunity.</div>
+      </div>
+      <div class="factor-item">
+        <div class="factor-label">Our Network</div>
+        <div class="factor-value">DEEP</div>
+        <div class="factor-desc">20,000+ TC professionals. The most extensive proprietary database in the country.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>LET'S TALK.</h2>
+  <p>Whether you're hiring or ready for your next move — we want to hear from you.</p>
+  <div class="cta-btns">
+    <a href="mailto:careers@tylersearch.com" class="btn-outline-maroon">Email Us</a>
+    <a href="tel:+12012644659" class="btn-outline-maroon">201-264-4659</a>
+    <a href="assets/Compensation-Trends-2026.pdf" class="btn-outline-maroon" target="_blank">2026 Salary Report</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <!-- <img src="TylerSearchLogo012.jpg" alt="Tyler Search"> -->
+        <p>The first and most successful Trade Compliance search firm in America. Staffed by former Global Trade professionals.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#specialties">Specialties</a></li>
+          <li><a href="#compensation">Compensation</a></li>
+          <li><a href="#careers">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="assets/Compensation-Trends-2026.pdf" target="_blank">2026 Salary Report</a></li>
+          <li><a href="https://tylersearch.com/?page_id=79" target="_blank">Articles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:careers@tylersearch.com">careers@tylersearch.com</a></li>
+          <li><a href="tel:+12012644659">201-264-4659</a></li>
+          <li><a href="https://www.linkedin.com/company/tyler-search-consultants/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/tradecomplianceandlogisticsrecruitment/" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com/TylerSearch" target="_blank">Twitter / X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Tyler Search Consultants. All Rights Reserved.</p>
+      <div class="footer-tagline">Tyler Search — First. And Still The Best.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
