@@ -35,17 +35,17 @@ nav {
   background: var(--white);
   border-bottom: 3px solid var(--maroon);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 6%; height: 68px;
+  padding: 0 6%; height: 84px;
 }
-.nav-logo img { height: 42px; width: auto; display: block; }
+.nav-logo img { height: 58px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
-.nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text); transition: color 0.15s; }
+.nav-links a { font-size: 14px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text); transition: color 0.15s; }
 .nav-links a:hover { color: var(--maroon); }
 .nav-email { background: var(--maroon) !important; color: var(--white) !important; padding: 10px 24px; }
 .nav-email:hover { background: var(--maroon-dark) !important; }
 
 /* HERO */
-.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 68px; }
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 84px; }
 
 .hero-left {
   background: var(--maroon);
@@ -86,9 +86,11 @@ nav {
 
 /* GOLD BAR */
 .gold-bar { background: var(--gold); padding: 28px 6%; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-.gold-bar-stats { display: flex; gap: 48px; flex-wrap: wrap; }
+.gold-bar-stats { display: flex; gap: 0; flex-wrap: wrap; }
+.gold-bar-stats > div { max-width: 190px; padding: 0 32px; border-left: 1px solid rgba(92,20,20,0.25); }
+.gold-bar-stats > div:first-child { padding-left: 0; border-left: none; }
 .gstat-num { font-family: var(--display); font-size: 36px; color: var(--maroon); line-height: 1; }
-.gstat-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(92,20,20,0.6); margin-top: 2px; }
+.gstat-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(92,20,20,0.6); margin-top: 4px; line-height: 1.4; }
 .gold-bar-tagline { font-family: var(--display); font-size: 22px; letter-spacing: 1px; color: var(--maroon-dark); line-height: 1.25; }
 
 /* SPLIT SECTIONS */
@@ -110,7 +112,7 @@ h2.display.maroon { color: var(--maroon); }
 .body-text { font-size: 15px; font-weight: 300; line-height: 1.8; margin-bottom: 36px; }
 .body-text.light { color: rgba(255,255,255,0.7); }
 .body-text.dark { color: var(--text-mid); }
-
+.body-text.dark.bold { color: var(--text-mid); font-weight: 700;}
 /* PROMISE ITEMS (Job Seekers) */
 .promise-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
 .promise-item { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
@@ -178,6 +180,13 @@ h2.display.maroon { color: var(--maroon); }
 .cta-section h2 { font-family: var(--display); font-size: clamp(52px,6vw,88px); color: var(--maroon); line-height: 0.92; margin-bottom: 20px; }
 .cta-section p { font-size: 16px; font-weight: 300; color: rgba(92,20,20,0.72); margin-bottom: 44px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-contacts { display: flex; gap: 64px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px; }
+.cta-contact { text-align: left; }
+.cta-contact-name { font-family: var(--display); font-size: 22px; letter-spacing: 0.5px; color: var(--maroon); margin-bottom: 8px; }
+.cta-contact-email, .cta-contact-phone { display: block; font-size: 14px; font-weight: 400; color: rgba(92,20,20,0.85); line-height: 1.6; transition: color 0.15s; }
+.cta-contact-email { text-decoration: underline; text-underline-offset: 2px; }
+.cta-contact-email:hover, .cta-contact-phone:hover { color: var(--maroon-dark); }
+.cta-contact-tenure { font-size: 14px; font-weight: 400; letter-spacing: 0.5px; color: rgba(92,20,20,0.55); margin-top: 4px; }
 .btn-outline-maroon { background: transparent; color: var(--maroon); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 36px; border: 2px solid var(--maroon); cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; }
 .btn-outline-maroon:hover { background: var(--maroon); color: var(--white); }
 
@@ -210,13 +219,15 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
   .factors-inner { grid-template-columns: 1fr; gap: 48px; }
   .factors-right { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .gold-bar { flex-direction: column; align-items: flex-start; gap: 24px; }
 }
 @media (max-width: 600px) {
   .nav-links { display: none; }
   .spec-grid { grid-template-columns: 1fr; }
   .factors-right { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
-  .gold-bar-stats { gap: 28px; }
+  .gold-bar-stats { flex-direction: column; gap: 20px; }
+  .gold-bar-stats > div { border-left: none; padding: 0; max-width: none; }
 }
 </style>
 </head>
@@ -242,7 +253,7 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
   <div class="hero-left">
     <div class="hero-kicker">America's #1 Trade Compliance Recruiters</div>
     <h1>CONTINUED<span>SUCCESS...</span></h1>
-    <p class="hero-sub">The first firm in America dedicated solely to Trade Compliance — since the Customs Modernization Act in the 1990s. Thirty-five years and 2,500+ placements later, it's still all we do.</p>
+    <p class="hero-sub">The first firm in America dedicated solely to Trade Compliance. Thirty-five years and 2,500+ hires later, it's still all we do.</p>
     <div class="hero-btns">
       <a href="mailto:careers@tylersearch.com" class="btn-gold">
         Find Talent
@@ -257,17 +268,17 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
     <div class="hero-right-label">The Tyler Search Difference</div>
 
     <div class="diff-item">
-      <div class="diff-stat text-stat">Easily Reachable network of Trade Compliance professionals</div>
+      <div class="diff-stat text-stat">Easily Reachable Network of Trade Compliance Professionals</div>
       <div>
         <div class="diff-title">Proprietary Trade Compliance Database</div>
-        <div class="diff-desc">The deepest network of Trade Compliance professionals in America — accessed immediately upon receiving your search request.</div>
+        <div class="diff-desc">The deepest Network of Trade Compliance professionals in America — accessed immediately upon receiving your search request.</div>
       </div>
     </div>
 
     <div class="diff-item">
       <div class="diff-stat text-stat">Contingency.<br>Retained Approach.</div>
       <div>
-        <div class="diff-title">The Discipline of a Retained Search</div>
+        <div class="diff-title">Confidentiality and Discretion</div>
         <div class="diff-desc">Contingency search firm with a retained search business model.</div>
       </div>
     </div>
@@ -276,12 +287,12 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
       <div class="diff-stat text-stat">Strict Confidentiality</div>
       <div>
         <div class="diff-title">We never submit resumes without permission</div>
-        <div class="diff-desc">Search stay private, your resume stays private — from first call through accepted offer.</div>
+        <div class="diff-desc">Your search stays private. Your resume stays private. From first contact through accepted offer and start day.</div>
       </div>
     </div>
 
     <div class="diff-item">
-      <div class="diff-stat text-stat">Fortune 500 to Mid-Market</div>
+      <div class="diff-stat text-stat">Fortune 500 to Mid-Market to Small Firm</div>
       <div>
         <div class="diff-title">Every Firm Size, Every Level</div>
         <div class="diff-desc">From Analyst to VP, startup to global enterprise — we've placed Trade Compliance professionals across every industry and company size.</div>
@@ -294,7 +305,7 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
 <div class="gold-bar">
   <div class="gold-bar-stats">
     <div><div class="gstat-num">35+</div><div class="gstat-label">Years serving the Trade Compliance Community</div></div>
-    <div><div class="gstat-num">2,500+</div><div class="gstat-label">Successful Trade Compliance Placements</div></div>
+    <div><div class="gstat-num">2,500+</div><div class="gstat-label">Successful Trade Compliance Hires</div></div>
     <div><div class="gstat-num">18,000+</div><div class="gstat-label">Trade Compliance Professionals in Our Proprietary Network</div></div>
   </div>
   <div class="gold-bar-tagline">Tyler was the First.<br>We're still the Best.</div>
@@ -320,7 +331,7 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
     <div class="reasons-header">
       <div>
         <div class="eyebrow dark">2026 Insight</div>
-        <h2 class="display dark" style="margin-bottom:0;">WHY TRADE COMPLIANCE PROS<br>MAKE A MOVE.</h2>
+        <h2 class="display dark" style="margin-bottom:0;">WHY TRADE COMPLIANCE<br>PROFESSIONALS MAKE A MOVE.</h2>
       </div>
       <p style="font-size:15px;font-weight:300;color:var(--text-mid);max-width:300px;line-height:1.75;">The landscape has shifted. Here's what's driving career decisions right now.</p>
     </div>
@@ -333,7 +344,7 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
       <div class="reason-card">
         <div class="reason-num">02</div>
         <h3>Remote &amp; Hybrid</h3>
-        <p>100% of candidates accept interviews for remote roles. Hybrid (3/2) drives strong interest. Full on-site sees significantly lower candidate engagement.</p>
+        <p>Mention remote and you'll get everyone's attention. 100% of candidates accept interviews for remote roles. Hybrid (3/2) drives strong interest. Full on-site sees significantly lower candidate engagement.</p>
       </div>
       <div class="reason-card">
         <div class="reason-num">03</div>
@@ -402,23 +413,26 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
         <div class="eyebrow dark">Our Process</div>
         <h2 class="display dark" style="margin-bottom:0;">HOW WE WORK.</h2>
       </div>
-      <p style="font-size:15px;font-weight:300;color:var(--text-mid);max-width:320px;line-height:1.75;">We don't post your role. We don't partner with other recruiters. We go directly to our network — and we move fast.</p>
+      <p style="font-size:15px;font-weight:300;color:var(--text-mid);max-width:320px;line-height:1.75;">We don't post your role. We don't partner with other recruiters. We go directly to our Network — and we move fast.</p>
     </div>
     <div class="how-grid">
       <div class="how-card">
         <div class="how-num">01</div>
         <h3>Brief Us</h3>
-        <p>Share your search criteria. We immediately access our proprietary database of 20,000+ Trade Compliance professionals — targeted to your role, level, and location.</p>
+        <p>Share your search criteria. We immediately access our proprietary database of 18,000+ Trade Compliance professionals — targeted to your role, level, and location.</p>
       </div>
       <div class="how-card">
         <div class="how-num">02</div>
         <h3>Review Candidates</h3>
-        <p>We identify the right fit and submit résumés for your confidential review. No advertising. No blind submissions.</p>
+        <p>Team Tyler contacts and develops a group of potential candidates – We
+then short list a few very strong talented candidates – and submit their
+resume to Our Client firms with a brief summary for their confidential
+review. No Advertising. No Blind Submissions.</p>
       </div>
       <div class="how-card">
         <div class="how-num">03</div>
         <h3>Make the Hire</h3>
-        <p>We manage the process from first contact through accepted offer — and we stay engaged throughout the onboarding process.</p>
+        <p>We manage the interview process from first contact through start. If requested, we stay engaged throughout the onboarding process.</p>
       </div>
     </div>
   </div>
@@ -438,15 +452,15 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
   <div class="split-content bg-off-white">
     <div class="salary-label">2026 Salary Ranges <span class="salary-label-badge">2026 DATA</span></div>
     <div class="salary-row">
-      <div class="salary-title">Trade Compliance Analyst / Coordinator</div>
+      <div class="salary-title">TC Analyst / Coordinator</div>
       <div class="salary-range">$75K–$90K</div>
     </div>
     <div class="salary-row">
-      <div class="salary-title">Trade Compliance Specialist</div>
+      <div class="salary-title">TC Specialist</div>
       <div class="salary-range">$90K–$98K</div>
     </div>
     <div class="salary-row">
-      <div class="salary-title">Senior Trade Compliance Specialist / Analyst</div>
+      <div class="salary-title">Senior TC Specialist / Analyst</div>
       <div class="salary-range">$95K–$115K</div>
     </div>
     <div class="salary-row">
@@ -454,7 +468,7 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
       <div class="salary-range">$120K–$145K</div>
     </div>
     <div class="salary-row">
-      <div class="salary-title">Trade Compliance Manager / Senior Manager</div>
+      <div class="salary-title">TC Manager / Senior Manager</div>
       <div class="salary-range">$140K–$170K</div>
     </div>
     <div class="salary-row">
@@ -477,15 +491,15 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
   <div class="split-content bg-off-white">
     <div class="eyebrow dark">For Job Seekers</div>
     <h2 class="display maroon">YOUR NEXT<br>OPPORTUNITY.</h2>
-    <p class="body-text dark">Confidential search. We represent <em>you</em> — not just a job description. Active roles across remote, hybrid, and on-site positions in every industry nationwide.</p>
+    <p class="body-text dark bold">Highly Confidential. Always Discreet.</p>
     <div class="promise-list">
       <div class="promise-item">
         <span class="promise-check">&#10003;</span>
-        <span>We never submit your résumé anywhere without discussing the specific role with you first.</span>
+        <span>We never submit your résumé anywhere without discussing the specific role with you first…and providing you with a Client Approved Job Description.</span>
       </div>
       <div class="promise-item">
         <span class="promise-check">&#10003;</span>
-        <span>We'll alert you confidentially as opportunities matching your interests and criteria develop across the country.</span>
+        <span>We&#39;ll alert you confidentially as opportunities come through Tyler that match your interests, geographic requirements and criteria…Remote, Hybrid, On- Site develop across the country.</span>
       </div>
       <div class="promise-item">
         <span class="promise-check">&#10003;</span>
@@ -510,7 +524,7 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
       <div class="factor-item">
         <div class="factor-label">Supply</div>
         <div class="factor-value">LOW</div>
-        <div class="factor-desc">Finite number of experienced TTrade ComplianceC professionals. 100% employment in the niche.</div>
+        <div class="factor-desc">Finite number of experienced Trade Compliance Professionals.  Virtually 100% employment.</div>
       </div>
       <div class="factor-item">
         <div class="factor-label">Demand</div>
@@ -520,12 +534,12 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
       <div class="factor-item">
         <div class="factor-label">Remote Interest</div>
         <div class="factor-value">100%</div>
-        <div class="factor-desc">Every candidate will interview for a remote opportunity.</div>
+        <div class="factor-desc">Companies that can open the geographic parameters to ‘Remote’ will have dozens of interested professionals.</div>
       </div>
       <div class="factor-item">
         <div class="factor-label">Our Network</div>
         <div class="factor-value">DEEP</div>
-        <div class="factor-desc">20,000+ Trade Compliance professionals. The most extensive proprietary database in the country.</div>
+        <div class="factor-desc">18,000+ Trade Compliance professionals. The most extensive proprietary network and database in the country.</div>
       </div>
     </div>
   </div>
@@ -533,13 +547,31 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
 
 <!-- CTA -->
 <section class="cta-section">
-  <h2>LET'S TALK.</h2>
-  <p>Whether you're hiring or ready for your next move — we want to hear from you.</p>
+  <h2>LET'S Connect.</h2>
+  <p>Whether you're hiring or ready for your next move — we want to hear from you.  Please Contact us today.</p>
+
+  <div class="cta-contacts">
+    <div class="cta-contact">
+      <div class="cta-contact-name">Kristine Reide</div>
+      <a href="mailto:kreide@tylersearch.com" class="cta-contact-email">kreide@tylersearch.com</a>
+      <a href="tel:+19737684184" class="cta-contact-phone">973-768-4184</a>
+      <div class="cta-contact-phone">27 yrs with Tyler</div>
+    </div>
+    <div class="cta-contact">
+      <div class="cta-contact-name">Nicole Benker</div>
+      <a href="mailto:nbenker@tylersearch.com" class="cta-contact-email">nbenker@tylersearch.com</a>
+      <a href="tel:+12016021567" class="cta-contact-phone">201-602-1567</a>
+      <div class="cta-contact-phone">20 yrs with Tyler</div>
+    </div>
+  </div>
+
+<!--
   <div class="cta-btns">
     <a href="mailto:careers@tylersearch.com" class="btn-outline-maroon">Email Us</a>
     <a href="tel:+12012644659" class="btn-outline-maroon">201-264-4659</a>
     <a href="assets/Compensation-Trends-2026.pdf" class="btn-outline-maroon" target="_blank">2026 Salary Report</a>
   </div>
+-->
 </section>
 
 <!-- FOOTER -->
@@ -554,7 +586,7 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
         <h4>Navigate</h4>
         <ul>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#specialties">Specialties</a></li>
+          <!--<li><a href="#specialties">Specialties</a></li> -->
           <li><a href="#compensation">Compensation</a></li>
           <li><a href="#careers">Careers</a></li>
         </ul>
