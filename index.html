@@ -14,8 +14,6 @@
 :root {
   --maroon: #0d2b52;
   --maroon-dark: #061a35;
-  --navy: #0d2b52
-  --navy-dark: #061a35;
   --gold: #6ED9C8;
   --gold-light: #3FA894;
   --white: #FFFFFF;
@@ -617,6 +615,58 @@ review. No Advertising. No Blind Submissions.</p>
     </div>
   </div>
 </footer>
+
+<!-- PALETTE PREVIEW TOOL — for review only, remove before final launch -->
+<div id="palette-picker" style="position:fixed; bottom:16px; right:16px; z-index:9999; background:rgba(17,17,17,0.92); padding:14px 16px; border-radius:8px; font-family:'DM Sans',sans-serif; box-shadow:0 4px 20px rgba(0,0,0,0.35);">
+  <label for="paletteSelect" style="display:block; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:#fff; margin-bottom:6px;">Preview Color Palette</label>
+  <select id="paletteSelect" style="font-size:13px; padding:6px 10px; border-radius:4px; border:none; min-width:230px; cursor:pointer;"></select>
+</div>
+
+<script>
+  // 10 professional palette options for owner review.
+  // Each swaps the site's --maroon / --maroon-dark (primary) and
+  // --gold / --gold-light (accent / accent-hover) variables live.
+  const palettes = [
+    { name: "1. Modern Navy & Teal (Current)", maroon: "#0d2b52", maroonDark: "#061a35", gold: "#6ED9C8", goldLight: "#3FA894" },
+    { name: "2. Classic Navy & Gold",          maroon: "#0d2b52", maroonDark: "#061a35", gold: "#D4AF37", goldLight: "#B8941F" },
+    { name: "3. Executive Burgundy & Gold",    maroon: "#5C1414", maroonDark: "#3D0D0D", gold: "#D4AF37", goldLight: "#B8941F" },
+    { name: "4. Charcoal & Steel Blue",        maroon: "#22282F", maroonDark: "#14171B", gold: "#7FA8C7", goldLight: "#4C7A9E" },
+    { name: "5. Forest Green & Gold",          maroon: "#1D3B2A", maroonDark: "#122419", gold: "#D4AF37", goldLight: "#B8941F" },
+    { name: "6. Deep Slate & Copper",          maroon: "#2C3E50", maroonDark: "#1A2733", gold: "#D89A63", goldLight: "#B87333" },
+    { name: "7. Midnight Blue & Silver",       maroon: "#0A1F3D", maroonDark: "#05122A", gold: "#B8C4CE", goldLight: "#8C9BAB" },
+    { name: "8. Royal Navy & Sky Blue",        maroon: "#0d2b52", maroonDark: "#061a35", gold: "#7FB3E8", goldLight: "#4A90D9" },
+    { name: "9. Graphite & Emerald",           maroon: "#2B2F33", maroonDark: "#1A1D20", gold: "#5CAF8F", goldLight: "#2E8B6F" },
+    { name: "10. Oxford Blue & Warm Gold",     maroon: "#14213D", maroonDark: "#0A1526", gold: "#E8C878", goldLight: "#D4A94A" },
+    { name: "11. Deep Teal & Gold",            maroon: "#0F3D3E", maroonDark: "#0A2728", gold: "#D4AF37", goldLight: "#B8941F" },
+    { name: "12. Indigo & Silver",             maroon: "#2E3A59", maroonDark: "#1C2438", gold: "#A9B4C2", goldLight: "#7C8AA0" },
+    { name: "13. Espresso Brown & Gold",       maroon: "#3B2A1E", maroonDark: "#241A12", gold: "#D4AF37", goldLight: "#B8941F" },
+    { name: "14. Hunter Green & Ivory Gold",   maroon: "#14432A", maroonDark: "#0C2A1A", gold: "#C9A84C", goldLight: "#A8873A" },
+    { name: "15. Navy & Rose Gold",            maroon: "#0d2b52", maroonDark: "#061a35", gold: "#C98B7A", goldLight: "#B06C58" },
+    { name: "16. Deep Plum & Champagne",       maroon: "#3D1F3D", maroonDark: "#280F28", gold: "#D9C79E", goldLight: "#BFA46E" },
+    { name: "17. Steel Gray & Amber",          maroon: "#3A4750", maroonDark: "#252E35", gold: "#E0A458", goldLight: "#C2833A" },
+    { name: "18. Sapphire & Bronze",           maroon: "#0A3D62", maroonDark: "#052338", gold: "#B08D57", goldLight: "#8F6F3F" },
+    { name: "19. Pine Green & Platinum",       maroon: "#1E3D32", maroonDark: "#12271F", gold: "#C7CDD1", goldLight: "#9FA8AD" },
+    { name: "20. Ink Blue & Champagne Gold",   maroon: "#0B1E3D", maroonDark: "#061224", gold: "#DCC48E", goldLight: "#C0A86A" },
+  ];
+
+  const paletteSelect = document.getElementById('paletteSelect');
+  palettes.forEach((p, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = p.name;
+    paletteSelect.appendChild(opt);
+  });
+
+  function applyPalette(p) {
+    const root = document.documentElement.style;
+    root.setProperty('--maroon', p.maroon);
+    root.setProperty('--maroon-dark', p.maroonDark);
+    root.setProperty('--gold', p.gold);
+    root.setProperty('--gold-light', p.goldLight);
+  }
+
+  paletteSelect.addEventListener('change', (e) => applyPalette(palettes[e.target.value]));
+</script>
 
 </body>
 </html>
