@@ -1,0 +1,31 @@
+{
+  "routes": [
+    {
+      "route": "/index.php/main-about-us",
+      "redirect": "/#about",
+      "statusCode": 301
+    },
+    {
+      "route": "/wp-content/uploads/2025/03/Compensation-Trends-2025.pdf",
+      "redirect": "/assets/Compensation-Trends-2026.pdf",
+      "statusCode": 301
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/images/*",
+      "/assets/*",
+      "/robots.txt",
+      "/sitemap.xml",
+      "*.{png,jpg,jpeg,gif,svg,ico,pdf,css,js,woff,woff2}"
+    ]
+  },
+  "mimeTypes": {
+    ".xml": "text/xml"
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  }
+}
