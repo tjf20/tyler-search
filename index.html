@@ -1,10 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tyler Search | Trade Compliance Recruiters</title>
+<title>Tyler Search | America's First &amp; Best Trade Compliance Recruiters</title>
+<meta name="description" content="Tyler Search is the first and still the best trade compliance recruitment firm in America. 35+ years, 2,500+ placements, and the deepest proprietary network of Trade Compliance, Export Control, and Customs professionals nationwide.">
+<link rel="canonical" href="https://www.tylersearch.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tyler Search">
+<meta property="og:title" content="Tyler Search | America's First & Best Trade Compliance Recruiters">
+<meta property="og:description" content="35+ years and 2,500+ hires. The first firm in America dedicated solely to Trade Compliance recruitment — and still the best.">
+<meta property="og:url" content="https://www.tylersearch.com/">
+<meta property="og:image" content="https://www.tylersearch.com/images/TylerSearchLogo012.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tyler Search | America's First & Best Trade Compliance Recruiters">
+<meta name="twitter:description" content="35+ years and 2,500+ hires. The first firm in America dedicated solely to Trade Compliance recruitment.">
+<meta name="twitter:image" content="https://www.tylersearch.com/images/TylerSearchLogo012.jpg">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EmploymentAgency",
+  "name": "Tyler Search Consultants",
+  "url": "https://www.tylersearch.com/",
+  "logo": "https://www.tylersearch.com/images/TylerSearchLogo012.jpg",
+  "description": "Tyler Search is the first and still the best trade compliance recruitment firm in America.",
+  "telephone": "+1-201-264-4659",
+  "email": "careers@tylersearch.com",
+  "sameAs": [
+    "https://www.linkedin.com/company/tyler-search-consultants/",
+    "https://www.facebook.com/tradecomplianceandlogisticsrecruitment/",
+    "https://twitter.com/TylerSearch"
+  ],
+  "areaServed": "US",
+  "knowsAbout": ["Trade Compliance Recruiting", "Export Compliance", "Import Compliance", "Customs Compliance", "OFAC Sanctions Compliance"]
+}
+</script>
+
+<link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -12,10 +54,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --maroon: #0d2b52;
-  --maroon-dark: #061a35;
-  --gold: #6ED9C8;
-  --gold-light: #3FA894;
+  --maroon: #0A1F3D;
+  --maroon-dark: #05122A;
+  --gold: #B8C4CE;
+  --gold-light: #8C9BAB;
   --white: #FFFFFF;
   --off-white: #F8F6F2;
   --light-gray: #EFEFED;
@@ -25,7 +67,7 @@
   --body: 'DM Sans', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 body { font-family: var(--body); color: var(--text); background: var(--white); overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 
@@ -35,17 +77,23 @@ nav {
   background: var(--white);
   border-bottom: 3px solid var(--maroon);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 6%; height: 84px;
+  padding: 0 6%; height: 118px;
 }
-.nav-logo img { height: 73px; width: auto; display: block; }
+.nav-logo img { height: 102px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
 .nav-links a { font-size: 14px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text); transition: color 0.15s; }
 .nav-links a:hover { color: var(--maroon); }
 .nav-email { background: var(--maroon) !important; color: var(--white) !important; padding: 10px 24px; }
 .nav-email:hover { background: var(--maroon-dark) !important; }
 
+.nav-toggle { display: none; flex-direction: column; justify-content: center; align-items: flex-end; gap: 5px; width: 32px; height: 32px; background: none; border: none; cursor: pointer; padding: 0; }
+.nav-toggle span { display: block; width: 100%; height: 2px; background: var(--maroon); transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 /* HERO */
-.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 84px; }
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 118px; }
 
 .hero-left {
   background: var(--maroon);
@@ -60,11 +108,11 @@ nav {
   color: var(--gold);
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 2px solid rgba(232,184,0,0.25);
+  border-bottom: 2px solid rgba(184,196,206,0.25);
 }
 .hero-left h1 { font-family: var(--display); font-size: clamp(58px, 6vw, 92px); line-height: 0.92; letter-spacing: 1px; color: var(--white); margin-bottom: 32px; }
 .hero-left h1 span { color: var(--gold); display: block; }
-.hero-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.68); line-height: 1.75; max-width: 380px; margin-bottom: 48px; }
+.hero-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.92); line-height: 1.75; max-width: 380px; margin-bottom: 48px; }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
 .btn-gold { background: var(--gold); color: var(--text); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 32px; border: 2px solid var(--gold); cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 8px; }
@@ -87,10 +135,10 @@ nav {
 /* GOLD BAR */
 .gold-bar { background: var(--gold); padding: 28px 6%; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
 .gold-bar-stats { display: flex; gap: 0; flex-wrap: wrap; }
-.gold-bar-stats > div { max-width: 190px; padding: 0 32px; border-left: 1px solid rgba(92,20,20,0.25); }
+.gold-bar-stats > div { max-width: 190px; padding: 0 32px; border-left: 1px solid rgba(10,31,61,0.25); }
 .gold-bar-stats > div:first-child { padding-left: 0; border-left: none; }
 .gstat-num { font-family: var(--display); font-size: 36px; color: var(--maroon); line-height: 1; }
-.gstat-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(92,20,20,0.6); margin-top: 4px; line-height: 1.4; }
+.gstat-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(10,31,61,0.6); margin-top: 4px; line-height: 1.4; }
 .gold-bar-tagline { font-family: var(--display); font-size: 22px; letter-spacing: 1px; color: var(--maroon-dark); line-height: 1.25; }
 
 /* SPLIT SECTIONS */
@@ -110,7 +158,7 @@ h2.display.dark { color: var(--text); }
 h2.display.maroon { color: var(--maroon); }
 
 .body-text { font-size: 15px; font-weight: 300; line-height: 1.8; margin-bottom: 36px; }
-.body-text.light { color: rgba(255,255,255,0.7); }
+.body-text.light { color: rgba(255,255,255,0.92); }
 .body-text.dark { color: var(--text-mid); }
 .body-text.dark.bold { color: var(--text-mid); font-weight: 700;}
 /* PROMISE ITEMS (Job Seekers) */
@@ -168,25 +216,25 @@ h2.display.maroon { color: var(--maroon); }
 .factors-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
 .factors-left h2 { font-family: var(--display); font-size: clamp(44px,4.5vw,68px); color: var(--white); line-height: 0.95; margin-bottom: 20px; }
 .factors-left h2 span { color: var(--gold); display: block; }
-.factors-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.75; }
+.factors-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.88); line-height: 1.75; }
 .factors-right { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.08); }
 .factor-item { background: rgba(255,255,255,0.04); padding: 32px 28px; }
 .factor-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
 .factor-value { font-family: var(--display); font-size: 36px; color: var(--white); line-height: 1; margin-bottom: 8px; }
-.factor-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.52); line-height: 1.65; }
+.factor-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.82); line-height: 1.65; }
 
 /* CTA */
 .cta-section { background: var(--gold); padding: 100px 6%; text-align: center; }
 .cta-section h2 { font-family: var(--display); font-size: clamp(52px,6vw,88px); color: var(--maroon); line-height: 0.92; margin-bottom: 20px; }
-.cta-section p { font-size: 16px; font-weight: 300; color: rgba(92,20,20,0.72); margin-bottom: 44px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.cta-section p { font-size: 16px; font-weight: 300; color: rgba(10,31,61,0.72); margin-bottom: 44px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .cta-contacts { display: flex; gap: 64px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px; }
 .cta-contact { text-align: left; }
 .cta-contact-name { font-family: var(--display); font-size: 22px; letter-spacing: 0.5px; color: var(--maroon); margin-bottom: 8px; }
-.cta-contact-email, .cta-contact-phone { display: block; font-size: 14px; font-weight: 400; color: rgba(92,20,20,0.85); line-height: 1.6; transition: color 0.15s; }
+.cta-contact-email, .cta-contact-phone { display: block; font-size: 14px; font-weight: 400; color: rgba(10,31,61,0.85); line-height: 1.6; transition: color 0.15s; }
 .cta-contact-email { text-decoration: underline; text-underline-offset: 2px; }
 .cta-contact-email:hover, .cta-contact-phone:hover { color: var(--maroon-dark); }
-.cta-contact-tenure { font-size: 14px; font-weight: 400; letter-spacing: 0.5px; color: rgba(92,20,20,0.55); margin-top: 4px; }
+.cta-contact-tenure { font-size: 14px; font-weight: 400; letter-spacing: 0.5px; color: rgba(10,31,61,0.55); margin-top: 4px; }
 .btn-outline-maroon { background: transparent; color: var(--maroon); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 36px; border: 2px solid var(--maroon); cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; }
 .btn-outline-maroon:hover { background: var(--maroon); color: var(--white); }
 
@@ -195,14 +243,14 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
 .footer-inner { max-width: 1100px; margin: 0 auto; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px; }
 .footer-logo img { height: 44px; width: auto; margin-bottom: 20px; filter: brightness(0) invert(1); opacity: 0.8; }
-.footer-logo p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.38); line-height: 1.8; }
+.footer-logo p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.8; }
 .footer-col h4 { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.footer-col ul a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.42); transition: color 0.15s; }
+.footer-col ul a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.7); transition: color 0.15s; }
 .footer-col ul a:hover { color: var(--gold); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer-bottom p { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.18); }
-.footer-tagline { font-family: var(--display); font-size: 16px; letter-spacing: 1px; color: rgba(232,184,0,0.45); }
+.footer-bottom p { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.4); }
+.footer-tagline { font-family: var(--display); font-size: 16px; letter-spacing: 1px; color: rgba(184,196,206,0.45); }
 
 .arr { display: inline-block; width: 14px; height: 14px; vertical-align: middle; }
 
@@ -222,7 +270,21 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
   .gold-bar { flex-direction: column; align-items: flex-start; gap: 24px; }
 }
 @media (max-width: 600px) {
-  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: fixed; top: 118px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--white);
+    border-bottom: 3px solid var(--maroon);
+    max-height: 0; overflow: hidden;
+    padding: 0 6%;
+    transition: max-height 0.25s ease, padding 0.25s ease;
+  }
+  .nav-links.open { max-height: 400px; padding: 12px 6% 24px; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 14px 0; border-bottom: 1px solid var(--light-gray); }
+  .nav-links li:last-child a { border-bottom: none; }
+  .nav-email { display: inline-block; margin-top: 8px; text-align: center; }
   .spec-grid { grid-template-columns: 1fr; }
   .factors-right { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
@@ -239,13 +301,16 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
   <a href="#home" class="nav-logo">
     <img src="images/TylerSearchLogo012.jpg" alt="Tyler Search">
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About Us</a></li>
    <!-- <li><a href="#specialties">Specialties</a></li>  -->
     <li><a href="#compensation">Compensation</a></li>
     <li><a href="#careers">Careers</a></li>
     <li><a href="mailto:careers@tylersearch.com" class="nav-email">Email Us</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -315,14 +380,14 @@ footer { background: var(--maroon-dark); padding: 60px 6% 36px; }
 <section class="split" id="about">
   <div class="split-content bg-maroon">
     <div class="eyebrow">For Employers</div>
-    <h2 class="display light">FIND THE RIGHT<br> TRADE COMPLIANCE TALENT.</h2>  
+    <h2 class="display light">FIND THE RIGHT<br> TRADE COMPLIANCE TALENT.</h2>
     <p class="body-text light">A great hire begins with a great resume. There is virtually full employment within the trade compliance community. Our name recognition, track record, and industry reputation generate strong, positive responses to our outreach.</p>
     <a href="mailto:careers@tylersearch.com" class="btn-gold" style="align-self:flex-start;">
       Start a Search
       <svg class="arr" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
     </a>
   </div>
-  <div class="split-img" style="background-image:url('images/FindTalent.png'); background-color:#8C2020;"></div>
+  <div class="split-img" style="background-image:url('images/FindTalent.png'); background-color:#0A1F3D;"></div>
 </section>
 
 <!-- WHY TC PROS MOVE -->
@@ -534,7 +599,7 @@ review. No Advertising. No Blind Submissions.</p>
       <div class="factor-item">
         <div class="factor-label">Remote Interest</div>
         <div class="factor-value">100%</div>
-        <div class="factor-desc">Companies that can open the geographic parameters to ‘Remote’ will have dozens of interested professionals.</div>
+        <div class="factor-desc">Companies that can open the geographic parameters to 'Remote' will have dozens of interested professionals.</div>
       </div>
       <div class="factor-item">
         <div class="factor-label">Our Network</div>
@@ -555,13 +620,13 @@ review. No Advertising. No Blind Submissions.</p>
       <div class="cta-contact-name">Kristine Reide</div>
       <a href="mailto:kreide@tylersearch.com" class="cta-contact-email">kreide@tylersearch.com</a>
       <a href="tel:+19737684184" class="cta-contact-phone">973-768-4184</a>
-      <div class="cta-contact-phone">27 yrs with Tyler</div>
+      <div class="cta-contact-tenure">Sr Director, Recruitment</div>
     </div>
     <div class="cta-contact">
       <div class="cta-contact-name">Nicole Benker</div>
       <a href="mailto:nbenker@tylersearch.com" class="cta-contact-email">nbenker@tylersearch.com</a>
       <a href="tel:+12016021567" class="cta-contact-phone">201-602-1567</a>
-      <div class="cta-contact-phone">20 yrs with Tyler</div>
+      <div class="cta-contact-tenure">Sr Director, Talent Acquisition</div>
     </div>
   </div>
 
@@ -616,56 +681,21 @@ review. No Advertising. No Blind Submissions.</p>
   </div>
 </footer>
 
-<!-- PALETTE PREVIEW TOOL — for review only, remove before final launch -->
-<div id="palette-picker" style="position:fixed; bottom:16px; right:16px; z-index:9999; background:rgba(17,17,17,0.92); padding:14px 16px; border-radius:8px; font-family:'DM Sans',sans-serif; box-shadow:0 4px 20px rgba(0,0,0,0.35);">
-  <label for="paletteSelect" style="display:block; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:#fff; margin-bottom:6px;">Preview Color Palette</label>
-  <select id="paletteSelect" style="font-size:13px; padding:6px 10px; border-radius:4px; border:none; min-width:230px; cursor:pointer;"></select>
-</div>
-
 <script>
-  // 10 professional palette options for owner review.
-  // Each swaps the site's --maroon / --maroon-dark (primary) and
-  // --gold / --gold-light (accent / accent-hover) variables live.
-  const palettes = [
-    { name: "1. Modern Navy & Teal (Current)", maroon: "#0d2b52", maroonDark: "#061a35", gold: "#6ED9C8", goldLight: "#3FA894" },
-    { name: "2. Classic Navy & Gold",          maroon: "#0d2b52", maroonDark: "#061a35", gold: "#D4AF37", goldLight: "#B8941F" },
-    { name: "3. Executive Burgundy & Gold",    maroon: "#5C1414", maroonDark: "#3D0D0D", gold: "#D4AF37", goldLight: "#B8941F" },
-    { name: "4. Charcoal & Steel Blue",        maroon: "#22282F", maroonDark: "#14171B", gold: "#7FA8C7", goldLight: "#4C7A9E" },
-    { name: "5. Forest Green & Gold",          maroon: "#1D3B2A", maroonDark: "#122419", gold: "#D4AF37", goldLight: "#B8941F" },
-    { name: "6. Deep Slate & Copper",          maroon: "#2C3E50", maroonDark: "#1A2733", gold: "#D89A63", goldLight: "#B87333" },
-    { name: "7. Midnight Blue & Silver",       maroon: "#0A1F3D", maroonDark: "#05122A", gold: "#B8C4CE", goldLight: "#8C9BAB" },
-    { name: "8. Royal Navy & Sky Blue",        maroon: "#0d2b52", maroonDark: "#061a35", gold: "#7FB3E8", goldLight: "#4A90D9" },
-    { name: "9. Graphite & Emerald",           maroon: "#2B2F33", maroonDark: "#1A1D20", gold: "#5CAF8F", goldLight: "#2E8B6F" },
-    { name: "10. Oxford Blue & Warm Gold",     maroon: "#14213D", maroonDark: "#0A1526", gold: "#E8C878", goldLight: "#D4A94A" },
-    { name: "11. Deep Teal & Gold",            maroon: "#0F3D3E", maroonDark: "#0A2728", gold: "#D4AF37", goldLight: "#B8941F" },
-    { name: "12. Indigo & Silver",             maroon: "#2E3A59", maroonDark: "#1C2438", gold: "#A9B4C2", goldLight: "#7C8AA0" },
-    { name: "13. Espresso Brown & Gold",       maroon: "#3B2A1E", maroonDark: "#241A12", gold: "#D4AF37", goldLight: "#B8941F" },
-    { name: "14. Hunter Green & Ivory Gold",   maroon: "#14432A", maroonDark: "#0C2A1A", gold: "#C9A84C", goldLight: "#A8873A" },
-    { name: "15. Navy & Rose Gold",            maroon: "#0d2b52", maroonDark: "#061a35", gold: "#C98B7A", goldLight: "#B06C58" },
-    { name: "16. Deep Plum & Champagne",       maroon: "#3D1F3D", maroonDark: "#280F28", gold: "#D9C79E", goldLight: "#BFA46E" },
-    { name: "17. Steel Gray & Amber",          maroon: "#3A4750", maroonDark: "#252E35", gold: "#E0A458", goldLight: "#C2833A" },
-    { name: "18. Sapphire & Bronze",           maroon: "#0A3D62", maroonDark: "#052338", gold: "#B08D57", goldLight: "#8F6F3F" },
-    { name: "19. Pine Green & Platinum",       maroon: "#1E3D32", maroonDark: "#12271F", gold: "#C7CDD1", goldLight: "#9FA8AD" },
-    { name: "20. Ink Blue & Champagne Gold",   maroon: "#0B1E3D", maroonDark: "#061224", gold: "#DCC48E", goldLight: "#C0A86A" },
-  ];
-
-  const paletteSelect = document.getElementById('paletteSelect');
-  palettes.forEach((p, i) => {
-    const opt = document.createElement('option');
-    opt.value = i;
-    opt.textContent = p.name;
-    paletteSelect.appendChild(opt);
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
-
-  function applyPalette(p) {
-    const root = document.documentElement.style;
-    root.setProperty('--maroon', p.maroon);
-    root.setProperty('--maroon-dark', p.maroonDark);
-    root.setProperty('--gold', p.gold);
-    root.setProperty('--gold-light', p.goldLight);
-  }
-
-  paletteSelect.addEventListener('change', (e) => applyPalette(palettes[e.target.value]));
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>
 
 </body>
