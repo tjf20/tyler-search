@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Legacy WordPress URL redirects (?page_id=) -->
+<!-- Azure Static Web Apps routing only matches on path, not query string, so old
+     ?page_id= links from the WordPress site are redirected here client-side. -->
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var pageId = params.get('page_id');
+  var redirectMap = { '54': '/#about', '104': '/#careers', '79': '/' };
+  if (pageId && redirectMap[pageId]) {
+    window.location.replace('https://www.tylersearch.com' + redirectMap[pageId]);
+  }
+})();
+</script>
 <title>Tyler Search | America's First &amp; Best Trade Compliance Recruiters</title>
 <meta name="description" content="Tyler Search is the first and still the best trade compliance recruitment firm in America. 35+ years, 2,500+ placements, and the deepest proprietary network of Trade Compliance, Export Control, and Customs professionals nationwide.">
 <link rel="canonical" href="https://www.tylersearch.com/">
@@ -30,15 +43,38 @@
   "url": "https://www.tylersearch.com/",
   "logo": "https://www.tylersearch.com/images/TylerSearchLogo012.jpg",
   "description": "Tyler Search is the first and still the best trade compliance recruitment firm in America.",
-  "telephone": "+1-201-264-4659",
-  "email": "careers@tylersearch.com",
+  "telephone": "+1-973-768-4184",
+  "email": "kreide@tylersearch.com",
   "sameAs": [
     "https://www.linkedin.com/company/tyler-search-consultants/",
     "https://www.facebook.com/tradecomplianceandlogisticsrecruitment/",
     "https://twitter.com/TylerSearch"
   ],
   "areaServed": "US",
-  "knowsAbout": ["Trade Compliance Recruiting", "Export Compliance", "Import Compliance", "Customs Compliance", "OFAC Sanctions Compliance"]
+  "knowsAbout": ["Trade Compliance Recruiting", "Export Compliance", "Import Compliance", "Customs Compliance", "OFAC Sanctions Compliance"],
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Kristine Reide",
+      "jobTitle": "Sr Director, Recruitment",
+      "email": "kreide@tylersearch.com",
+      "telephone": "+1-973-768-4184"
+    },
+    {
+      "@type": "Person",
+      "name": "Nicole Benker",
+      "jobTitle": "Sr Director, Talent Acquisition",
+      "email": "nbenker@tylersearch.com",
+      "telephone": "+1-201-602-1567"
+    },
+    {
+      "@type": "Person",
+      "name": "Joyelle Benker",
+      "jobTitle": "Sr Manager, Recruitment & Talent Acquisition",
+      "email": "jbenker@tylersearch.com",
+      "telephone": "+1-845-542-6900"
+    }
+  ]
 }
 </script>
 
